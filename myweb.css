@@ -55,6 +55,11 @@ nav>a{
     border-radius: 22px;
 
 }
+nav>a:hover{
+    transition: 0.25s;
+    background-color: rgb(56, 130,209);
+    color: aliceblue;
+}
 .banner{
     background-image: url("./Images/giay9.jpg");
     background-size:cover;
@@ -97,11 +102,7 @@ nav>a{
     color: aliceblue;
     transition: 0.25s;
 }
-nav>a:hover{
-    transition: 0.25s;
-    background-color: rgb(56, 130,209);
-    color: aliceblue;
-}
+
 img:nth-child(2){
     height: 600px;
     width: 100%;
@@ -255,7 +256,7 @@ footer{
 h3{
     font-size: 20px;
     text-align: center;
-    color: aliceblue;
+    color: black;
     margin-bottom: 5px;
     border: none;
     margin-left: 110px;
@@ -361,10 +362,16 @@ input:hover{
     border: none;
     transition: all 0.1s ease-in-out;
     border-radius: 10px;
+    position: absolute;
+    left: 0px;
 }
 .button-submit:hover{
     border-radius: 10px;
     background-color: black;
     color: white;
     border:white;
+}
+iframe{
+    margin-left: 20px;
+    border-radius: 6px;
 }

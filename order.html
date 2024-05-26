@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <title>Đặt hàng</title>
+</head>
+<body>
+    <div class="container">
+        <div id="logo">
+            <img src="./Images/logo.png" alt="">
+            <span>BAOANH Sneakers</span>
+           <nav>
+            <a href="">Home</a>
+            <a href="">Shop</a>
+            <a href="">About</a>
+            <a href=""> <i class="fa-solid fa-basket-shopping"></i></a> 
+           </nav>
+           </div>
+        <h2>Đặt mua sản phẩm</h2>
+        <div class="infomation">
+            <div id="order-details">
+                <img id="product-image" src="" alt="Hình ảnh sản phẩm" style="max-width: 320px; height: auto;">
+                <p>Giới tính: <span id="product-cat"></span></p>
+                <p>Tên sản phẩm: <span id="product-name"></span></p>
+                <p>Giá: <span id="product-price"></span> VND</p>
+            </div>    
+            <div class="size">
+                <p>Size</p>
+                <select name="comboBox" id="comboBox">
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                </select>
+            </div>
+            <div class="quantity">
+                <p>Quantity</p>
+                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
+                <input type="number" class="quantity-input" id="quantity" value="1">
+                <button class="quantity-button" onclick="increaseQuantity()">+</button>
+            </div>
+        </div>
+        
+    </div>
+   
+
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                cat:   params.get('cat'),
+                name:  params.get('name'),
+                price: params.get('price'),
+                image: params.get('image')
+            };
+        }
+
+        const productInfo = getQueryParams();
+        
+        if (productInfo.cat && productInfo.name && productInfo.price && productInfo.image) {
+            document.getElementById('product-cat').textContent=productInfo.cat;
+            document.getElementById('product-name').textContent = productInfo.name;
+            document.getElementById('product-price').textContent = productInfo.price;
+            document.getElementById('product-image').src = decodeURIComponent(productInfo.image);
+            document.getElementById('product-image').alt = productInfo.name;
+        } else {
+            document.getElementById('order-details').textContent = 'Không có thông tin sản phẩm để hiển thị.';
+        }
+        function increaseQuantity() {
+        var input = document.getElementById('quantity');
+        var value = parseInt(input.value, 10);
+        input.value = value + 1;
+    }
+
+    function decreaseQuantity() {
+        var input = document.getElementById('quantity');
+        var value = parseInt(input.value, 10);
+        if (value > 1) {
+            input.value = value - 1;
+        }
+    }
+    </script>
+</body>
+</html>

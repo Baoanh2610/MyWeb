@@ -1,0 +1,137 @@
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+  
+}
+#logo{
+    background-color: black;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top:0px;
+    z-index: 5;
+}
+#logo img{
+    width: 90px;
+    height: 90px;
+    margin-top: -8px;
+    margin-left: 140px;
+}
+#logo nav{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 22px;
+    height: 100%;
+    margin-left: 100px;
+
+}
+nav>a{
+    color: aliceblue;
+    text-decoration: none;
+    padding: 0px 56px;
+    border-radius: 22px;
+
+}
+body{
+    margin: 0 auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0ecec;
+}
+#logo span{
+    color: aliceblue;
+    font-size: 25px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav>a:hover{
+    transition: 0.25s;
+    background-color: rgb(56, 130,209);
+    color: aliceblue;
+}
+h2{
+   margin-top: 100px;
+   text-align: center;
+   font-size: 27px;
+}
+#order-details{
+    margin-left: 100px;
+
+}
+#size{
+    margin-left: 470px;
+}
+img{
+    width: 700px;
+    height: 700px;
+    margin-left: -20px;
+}
+#choose-size{
+    width: 200px;
+    height: 200px;
+}
+.infomation{
+    display: flex;
+}
+.size p{
+    margin-top: 40px;
+    margin-left: 100px;
+    font-weight: bold;
+    font-size: larger;
+}
+select{
+    width: 140px;
+    height: 30px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.quantity{
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin-left: 20px;
+}
+.quantity p{
+    margin-top: 40px;
+    margin-left: 150px;
+    font-weight: bold;
+    font-size: larger;
+}
+.quantity-input {
+    width: 100px;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-top: 8px;
+    margin-left: 40px;
+}
+.quantity-input:focus {
+    border-color: #66afe9;
+}
+.quantity-button {
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin: 0 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+    
+}
+.quantity-button:hover {
+    background-color: #e0e0e0;
+    border-color: #adadad;
+}
