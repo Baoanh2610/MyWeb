@@ -42,9 +42,17 @@
             </div>
             <div class="quantity">
                 <p>Quantity</p>
-                <button class="quantity-button" onclick="decreaseQuantity()">-</button>
-                <input type="number" class="quantity-input" id="quantity" value="1">
-                <button class="quantity-button" onclick="increaseQuantity()">+</button>
+                <div id="buy-amount">
+                    <button class="minus-btn" onclick="handleMinus()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>                  
+                      </button>
+                    <input type="text" id="amount" name="amount" value="1">
+                    <button class="plus-btn" onclick="handlePlus()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                      </button>
+                </div>
             </div>
         </div>
         
@@ -74,19 +82,53 @@
         } else {
             document.getElementById('order-details').textContent = 'Không có thông tin sản phẩm để hiển thị.';
         }
-        function increaseQuantity() {
-        var input = document.getElementById('quantity');
-        var value = parseInt(input.value, 10);
-        input.value = value + 1;
-    }
+    //     function increaseQuantity() {
+    //     var input = document.getElementById('quantity');
+    //     var value = parseInt(input.value, 10);
+    //     input.value = value + 1;
+    // }
 
-    function decreaseQuantity() {
-        var input = document.getElementById('quantity');
-        var value = parseInt(input.value, 10);
-        if (value > 1) {
-            input.value = value - 1;
+    // function decreaseQuantity() {
+    //     var input = document.getElementById('quantity');
+    //     var value = parseInt(input.value, 10);
+    //     if (value > 1) {
+    //         input.value = value - 1;
+    //     }
+    // }
+        let amountElement = document.getElementById("amount");
+        let amount = amountElement.value;
+        let render = (amount)=>{
+            amountElement.value=amount;
         }
-    }
+        let handlePlus = () => {
+            amount++;
+            render(amount);
+        }
+        let handleMinus = () => {
+            if(amount>1)
+            amount--;
+            render(amount);
+        }
+        // function render(amout){
+        //     amountElement.value=amount
+        // }
+        // function handlePlus(){
+        //     amount++
+        //     console.log(amount)
+        //     render(amount)
+        // }
+        // function handleMinus(){
+        //     if(amount>1)
+        //     amount--
+        //     render(amount)
+        // }
+        amountElement.addEventListener('input',()=>{
+            amount=amountElement.value;
+            amount=parseInt(amount);
+            amount=(isNaN(amount)||amount==0)?1:amount;
+            render(amount);
+
+        })
     </script>
 </body>
 </html>

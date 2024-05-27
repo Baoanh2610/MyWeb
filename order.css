@@ -84,54 +84,54 @@ img{
     display: flex;
 }
 .size p{
-    margin-top: 40px;
-    margin-left: 100px;
+    /* margin-top: 40px;
+    margin-left: 100px; */
     font-weight: bold;
     font-size: larger;
+    text-align: center;
+}
+.size{
+    margin-left: 20px;
+    margin-top: 20px;
 }
 select{
     width: 140px;
     height: 30px;
-    margin-left: 50px;
+    margin-left: 0px;
     margin-top: 10px;
 }
 .quantity{
     align-items: center;
     font-family: Arial, sans-serif;
-    margin-left: 20px;
+    margin-left: 60px;
+    margin-top: 20px;
 }
 .quantity p{
-    margin-top: 40px;
-    margin-left: 150px;
+    text-align: center;
     font-weight: bold;
     font-size: larger;
 }
-.quantity-input {
-    width: 100px;
-    text-align: center;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+#buy-amount button{
+    width: 35px;
+    height: 30px;
     outline: none;
-    transition: border-color 0.3s;
-    margin-top: 8px;
-    margin-left: 40px;
-}
-.quantity-input:focus {
-    border-color: #66afe9;
-}
-.quantity-button {
+    background: none;
+    border: 1px solid #ececec;
     cursor: pointer;
-    font-size: 18px;
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 8px 12px;
-    margin: 0 5px;
-    transition: background-color 0.3s, border-color 0.3s;
-    
 }
-.quantity-button:hover {
-    background-color: #e0e0e0;
-    border-color: #adadad;
+#buy-amount button:hover{
+    background-color: #c2c1c1;
+}
+#buy-amount svg{
+    color:#716e6e
+}
+#buy-amount{
+    display: flex;
+    margin-top: 29px;
+}
+#buy-amount input{
+    width: 80px;
+    height: 24px;
+    text-align: center;
+    border: 1px solid #ececec;
 }
