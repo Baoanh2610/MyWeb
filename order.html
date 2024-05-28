@@ -14,7 +14,7 @@
             <img src="./Images/logo.png" alt="">
             <span>BAOANH Sneakers</span>
            <nav>
-            <a href="">Home</a>
+            <a href="./myweb.html">Home</a>
             <a href="">Shop</a>
             <a href="">About</a>
             <a href=""> <i class="fa-solid fa-basket-shopping"></i></a> 
@@ -26,7 +26,7 @@
                 <img id="product-image" src="" alt="Hình ảnh sản phẩm" style="max-width: 320px; height: auto;">
                 <p>Giới tính: <span id="product-cat"></span></p>
                 <p>Tên sản phẩm: <span id="product-name"></span></p>
-                <p>Giá: <span id="product-price"></span> VND</p>
+                <p>Giá: <span id="product-price">VND</span></p>
             </div>    
             <div class="size">
                 <p>Size</p>
@@ -43,15 +43,23 @@
             <div class="quantity">
                 <p>Quantity</p>
                 <div id="buy-amount">
-                    <button class="minus-btn" onclick="handleMinus()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                    <button class="minus-btn" onclick="handleMinus(),updateTotalPrice()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
                       </svg>                  
                       </button>
                     <input type="text" id="amount" name="amount" value="1">
-                    <button class="plus-btn" onclick="handlePlus()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                    <button class="plus-btn" onclick="handlePlus(),updateTotalPrice()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                       </svg>
                       </button>
+                </div>
+                
+            </div>
+            <div class="total">
+                <p>Total</p>
+                <div class="total-price">
+                    <span id="total-price"></span> 
+                    <span style="color: red; font-weight: bold; font-size: 20px;">VND</span>
                 </div>
             </div>
         </div>
@@ -61,6 +69,7 @@
 
 
     <script>
+       
         function getQueryParams() {
             const params = new URLSearchParams(window.location.search);
             return {
@@ -82,19 +91,8 @@
         } else {
             document.getElementById('order-details').textContent = 'Không có thông tin sản phẩm để hiển thị.';
         }
-    //     function increaseQuantity() {
-    //     var input = document.getElementById('quantity');
-    //     var value = parseInt(input.value, 10);
-    //     input.value = value + 1;
-    // }
 
-    // function decreaseQuantity() {
-    //     var input = document.getElementById('quantity');
-    //     var value = parseInt(input.value, 10);
-    //     if (value > 1) {
-    //         input.value = value - 1;
-    //     }
-    // }
+
         let amountElement = document.getElementById("amount");
         let amount = amountElement.value;
         let render = (amount)=>{
@@ -129,6 +127,38 @@
             render(amount);
 
         })
+        function formatNumber(value) {
+            return value.toLocaleString('vi-VN');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var priceElements = document.querySelectorAll('.product-price');
+            priceElements.forEach(function(priceElement) {
+                var price = parseInt(priceElement.textContent);
+                priceElement.textContent = formatNumber(price);
+            });
+        });
+        function formatCurrency(value) {
+            return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace("₫", "VND");
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var priceElement = document.getElementById('product-price');
+            var price = parseInt(priceElement.textContent);
+            priceElement.textContent = formatCurrency(price);
+        });
+        const priceElement = document.getElementById('product-price');
+        const totalPriceElement = document.getElementById('total-price');
+        function updateTotalPrice() {
+            var price = parseInt(productInfo.price);
+            var quantity = parseInt(amountElement.value);
+            var totalPrice = price * quantity;
+            totalPriceElement.textContent = formatNumber(totalPrice);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTotalPrice();
+            priceElement.textContent = formatNumber(parseInt(productInfo.price));
+        });
     </script>
 </body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="myweb.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="icon" type="image" href="./Images/logo.png">
     <title>BAOANH</title>
 </head>
 <body>
@@ -43,7 +44,7 @@
         <div class="products">
             <table>
                 <tr>
-                    <td class="product" data-cat="Men" data-name="Fila Oakmont Tr" data-price="4.99" data-image="./Images/sp1.webp"> 
+                    <td class="product" data-cat="Men" data-name="Fila Oakmont Tr" data-price="49000000" data-image="./Images/sp1.webp"> 
                         <div class="product-top">
                             <a href="#"class="product-thumb"><img src="./Images/sp1.webp" alt=""></a> 
                         </div>
@@ -51,10 +52,10 @@
                        <div class="product-inf">
                         <a href="#" class="product-cat">Men</a>
                         <a href="#" class="product-name">Fila Oakmont Tr</a>
-                        <div class="product-price">$4.99</div>
+                        <div class="product-price">49000000</div>
                        </div>
                     </td>
-                    <td class="product" data-cat="Women" data-name="Fila Ray Tracer" data-price="7.99" data-image="./Images/sp2.webp"> 
+                    <td class="product" data-cat="Women" data-name="Fila Ray Tracer" data-price="7900000" data-image="./Images/sp2.webp"> 
                         <div class="product-top">
                             <a href="#" class="product-thumb"><img src="./Images/sp2.webp" alt=""></a> 
                         </div>
@@ -62,10 +63,10 @@
                         <div class="product-inf">
                          <a href="#" class="product-cat">Women</a>
                          <a href="#" class="product-name">Fila Ray Tracer</a>
-                         <div class="product-price">$7.99</div>
+                         <div class="product-price">7900000</div>
                         </div>
                      </td>
-                     <td class="product" data-cat="Men" data-name="Fila Zagato" data-price="2.99" data-image="./Images/sp3.webp"> 
+                     <td class="product" data-cat="Men" data-name="Fila Zagato" data-price="5700000" data-image="./Images/sp3.webp"> 
                         <div class="product-top">
                             <a href="#" class="product-thumb"><img src="./Images/sp3.webp" alt=""></a> 
                         </div>
@@ -73,12 +74,12 @@
                         <div class="product-inf">
                          <a href="#" class="product-cat">Men</a>
                          <a href="#" class="product-name">Fila Zagato</a>
-                         <div class="product-price">$2.99</div>
+                         <div class="product-price">5700000</div>
                         </div>
                      </td>
                 </tr>
                 <tr>
-                    <td class="product" data-cat="Men" data-name="Converse Chuck Jack Purcell" data-price="8.99" data-image="./Images/sp4.webp"> 
+                    <td class="product" data-cat="Men" data-name="Converse Chuck Jack Purcell" data-price="8900000" data-image="./Images/sp4.webp"> 
                         <div class="product-top">
                             <a href="#" class="product-thumb"><img src="./Images/sp4.webp" alt=""></a> 
                         </div>
@@ -86,10 +87,10 @@
                         <div style="margin-left: 70px;" class="product-inf">
                          <a href="#" class="product-cat">Men</a>
                          <a href="#" class="product-name">Converse Chuck Jack Purcell</a>
-                         <div class="product-price">$8.99</div>
+                         <div class="product-price">8900000</div>
                         </div>
                      </td>
-                     <td class="product" data-cat="Women" data-name="Nike E-Series 1.0" data-price="4.99" data-image="./Images/sp5.webp"> 
+                     <td class="product" data-cat="Women" data-name="Nike E-Series 1.0" data-price="4990000" data-image="./Images/sp5.webp"> 
                         <div class="product-top">
                             <a href="#" class="product-thumb"><img src="./Images/sp5.webp" alt=""></a> 
                         </div>
@@ -97,10 +98,10 @@
                         <div class="product-inf">
                          <a href="#" class="product-cat">Women</a>
                          <a href="#" class="product-name">Nike E-Series 1.0</a>
-                         <div class="product-price">$4.99</div>
+                         <div class="product-price">4990000</div>
                         </div>
                      </td>
-                      <td class="product" data-cat="Men" data-name="adidas Nmd_R1 W" data-price="12.99" data-image="./Images/sp6.webp"> 
+                      <td class="product" data-cat="Men" data-name="adidas Nmd_R1 W" data-price="1290000" data-image="./Images/sp6.webp"> 
                         <div class="product-top">
                             <a href="#" class="product-thumb"><img src="./Images/sp6.webp" alt=""></a> 
                         </div>
@@ -108,7 +109,7 @@
                         <div class="product-inf">
                          <a href="#" class="product-cat">Men</a>
                          <a href="#" class="product-name">adidas Nmd_R1 W</a>
-                         <div class="product-price">$12.99</div>
+                         <div class="product-price">1290000</div>
                         </div>
                      </td>
                 </tr>
@@ -139,7 +140,7 @@
                 <div class="footer-content">
                     <h3 style="margin-left: 120px;">Quick Links</h3>
                     <ul class="list">
-                        <li><a href="">Home</a></li>
+                        <li><a href="#top">Home</a></li>
                         <li><a href="">Shop</a></li>
                         <li><a href="">About</a></li>
                     </ul>
@@ -166,8 +167,18 @@
             const price = product.getAttribute('data-price');
             const image = product.getAttribute('data-image');
             window.location.href = `order.html?cat=${encodeURIComponent(cat)}&name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(image)}`;
-
         }
+        function formatNumber(value) {
+            return value.toLocaleString('vi-VN');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var priceElements = document.querySelectorAll('.product-price');
+            priceElements.forEach(function(priceElement) {
+                var price = parseInt(priceElement.textContent);
+                priceElement.textContent = formatNumber(price);
+            });
+        });
     </script>
 </body>
 </html>
