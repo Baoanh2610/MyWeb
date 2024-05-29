@@ -39,7 +39,7 @@
                </div>
         </div>
         <div class="best-seller">
-            <h3>BEST SELLER</h3>
+            <h3 id="best">BEST SELLER</h3>
         </div>
         <div class="products">
             <table>
@@ -126,11 +126,11 @@
                             <td rowspan="3"> <input type="text" placeholder="Type your message here..."></td>
                         </tr>
                         <tr>
-                            <td> <input type="email" placeholder="Email"></td>
+                            <td> <input id="email-input" type="email" placeholder="Email"></td>
                            
                         </tr>
                         <tr>
-                         <td><input type="tel" placeholder="Phone"> </td>  
+                         <td><input id="tel-input" type="tel" placeholder="Phone"> </td>  
                         </tr>
                     </table>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5192335376214!2d106.65879097386821!3d10.771486889376966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ec2f764f5dd%3A0xcb4f087958323f6e!2zN0EvNDMvNTggVGjDoG5oIFRow6FpLCBQaMaw4budbmcgMTQsIFF14bqtbiAxMCwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oIDcyNTA2MCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1716474276962!5m2!1svi!2s"
@@ -138,7 +138,7 @@
                     <button class="button-submit" type="submit">Submit</button>
                 </div>
                 <div class="footer-content">
-                    <h3 style="margin-left: 120px;">Quick Links</h3>
+                    <h3 >Quick Links</h3>
                     <ul class="list">
                         <li><a href="#top">Home</a></li>
                         <li><a href="">Shop</a></li>
@@ -146,7 +146,7 @@
                     </ul>
                 </div>
                 <div class="footer-content">
-                    <h3>Follow Us</h3>
+                    <h3 style="margin-left: -40px;">Follow Us</h3>
                     <li class="icons"><a href=""><i class="fa-brands fa-facebook fa-lg"></i></a></li>
                     <li class="icons"><a href=""><i class="fa-brands fa-twitter fa-lg"></i></a></li>
                     <li class="icons"><a href=""><i class="fa-brands fa-instagram fa-lg"></i></a></li>
@@ -179,6 +179,7 @@
                 priceElement.textContent = formatNumber(price);
             });
         });
+
     </script>
 </body>
 </html>

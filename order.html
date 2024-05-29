@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="order.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="icon" type="image" href="./Images/logo.png">
     <title>Đặt hàng</title>
 </head>
 <body>
@@ -29,7 +30,7 @@
                 <img id="product-image" src="" alt="Hình ảnh sản phẩm" style="max-width: 320px; height: auto;">
                 <p>Giới tính: <span id="product-cat"></span></p>
                 <p>Tên sản phẩm: <span id="product-name"></span></p>
-                <p>Giá: <span id="product-price">VND</span></p>
+                <p>Giá: <span id="product-price"></span> <span>VND</span></p>
             </div>    
             <div class="size">
                 <p>Size</p>
@@ -84,7 +85,6 @@
         }
 
         const productInfo = getQueryParams();
-        
         if (productInfo.cat && productInfo.name && productInfo.price && productInfo.image) {
             document.getElementById('product-cat').textContent=productInfo.cat;
             document.getElementById('product-name').textContent = productInfo.name;
@@ -130,9 +130,7 @@
             render(amount);
 
         })
-        function formatNumber(value) {
-            return value.toLocaleString('vi-VN');
-        }
+       
 
         document.addEventListener('DOMContentLoaded', function() {
             var priceElements = document.querySelectorAll('.product-price');
@@ -141,6 +139,9 @@
                 priceElement.textContent = formatNumber(price);
             });
         });
+        function formatNumber(value) {
+            return value.toLocaleString('vi-VN');
+        }
         function formatCurrency(value) {
             return value.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }).replace("₫", "VND");
         }

@@ -176,7 +176,7 @@ img:nth-child(2){
    margin: 0px ;
    background-color: #f0ecec;
 }
-h3{
+#best{
     font-size: 19px;
     color: #111;
     padding: 10px 20px;
@@ -256,13 +256,12 @@ footer{
 .footer-content{
     width: 33.3%;
 }
-h3{
+.footer-content h3{
     font-size: 20px;
     text-align: center;
-    color: black;
+    color: white;
     margin-bottom: 5px;
     border: none;
-    margin-left: 110px;
 }
 .footer-content p{
     width: 100%;
