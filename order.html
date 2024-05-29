@@ -19,7 +19,10 @@
             <a href="">About</a>
             <a href=""> <i class="fa-solid fa-basket-shopping"></i></a> 
            </nav>
-           </div>
+        </div>
+        <div class="notifications">
+           
+        </div>
         <h2>Đặt mua sản phẩm</h2>
         <div class="infomation">
             <div id="order-details">
@@ -53,7 +56,6 @@
                       </svg>
                       </button>
                 </div>
-                
             </div>
             <div class="total">
                 <p>Total</p>
@@ -62,10 +64,11 @@
                     <span style="color: red; font-weight: bold; font-size: 20px;">VND</span>
                 </div>
             </div>
+            <div class="ok">
+                <button id="success" type="submit">Order</button>
+            </div>
         </div>
-        
     </div>
-   
 
 
     <script>
@@ -159,6 +162,28 @@
             updateTotalPrice();
             priceElement.textContent = formatNumber(parseInt(productInfo.price));
         });
+        let notifications =document.querySelector('.notifications')
+        let success=document.getElementById('success')
+        function createToast(type,icon,title,text){
+            let newToast =document.createElement('div')
+            newToast.innerHTML=`
+            <div class="toast ${type}">
+                <i class="${icon}"></i>
+                <div class="content">
+                    <div class="title">${title}</div>
+                    <span>${text}</span>
+                </div>
+            </div>`;
+            notifications.appendChild(newToast);
+            newToast.timeOut=setTimeout(()=>newToast.remove(),5000)
+        }
+        success.onclick=function(){
+            let type='success'
+            let icon='fa-regular fa-circle-check'
+            let title='Success'
+            let text='Congratulations on your successful order.'
+            createToast(type,icon,title,text)
+        }
     </script>
 </body>
 </html>
