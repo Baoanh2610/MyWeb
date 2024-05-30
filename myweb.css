@@ -173,17 +173,19 @@ img:nth-child(2){
 } */
 .best-seller{
    text-align: center;
-   margin: 0px ;
+   margin-top: 0px ;
    background-color: #f0ecec;
 }
 #best{
     font-size: 19px;
     color: #111;
     padding: 10px 20px;
-    border: 1px solid #bebebe;
+    border: 2px solid #bebebe;
     display: inline-block;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    font-weight: bold;
 }
 .products a{
     color: black;
